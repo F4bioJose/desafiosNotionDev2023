@@ -1,5 +1,5 @@
 
-function calculetSalary(hourValue,hoursWorked) {
+function calculatSalary(hourValue,hoursWorked) {
 
     let grossSalary = hourValue * hoursWorked;
     let rate = 0;
@@ -30,5 +30,5 @@ function calculetSalary(hourValue,hoursWorked) {
     return
 }
     
-calculetSalary(6.55,168)
+calculatSalary(6.55,168)
 
