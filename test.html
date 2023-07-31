@@ -6,11 +6,100 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-         
+
+<script> // Fatorial 
+
+
+ function fatorial() {
+
+    let arrayNumerica = [1,5,2,5]
+    for (let i = 0; i < arrayNumerica.length; i++) {
+
+        arrayNumerica = arrayNumerica.slice(0,1)
+        arrayNumerica = Number(arrayNumerica)
+    }
+    
+    if(arrayNumerica === 0 || arrayNumerica === 1) {
+         console.log(1)
+
+    } else {
+        let fatorial = 1
+        for(let i = 1; i <= arrayNumerica; ++i) {
+        fatorial *= i;
+        }
+        console.log(fatorial)
+    }
+    
+     return fatorial
+    } 
+
+    fatorial();
+</script>
+
+<!-- <script> //Média Aritmédica
+
+    // function mediaAretimedica (array) {
+    //     let soma = 0
         
 
-        
-    </script>
+    //     for(let i = 0; i < array.length; i++) {
+    //         soma += array[i]
+    //     }
+    //     let media = soma/array.length
+    //     console.log(media) 
+    //    return media
+    // } 
+
+    // mediaAretimedica([4,5])
+
+</script>
+    
+<script>
+
+ function mediaAretimedica (array) {
+     let soma = 0
+    
+
+     for(let i = 0; i < array.length; i++) {
+         soma += array[i]
+     }
+     let media = soma/array.length
+     
+    return media
+ } 
+    
+
+    function variancia(array,media) {
+
+        let desvio = 0
+        let desvioArray = []
+        for(let i = 0; i < array.length; i++) {
+            desvio = media-array[i]
+            if(desvio < 0) {
+            desvio = desvio*(-1)
+            }
+
+            desvio = desvio**(2)
+            desvioArray.push(desvio)
+        }
+        let variancia = 0;
+        for (let i = 0; i < desvioArray.length; i++) {
+            variancia += desvioArray[i] / desvioArray.length
+        }
+            console.log(variancia)
+            return variancia
+    }
+        let media = mediaAretimedica([2,2,2,2])
+        variancia([2,4,3,1],media)
+    
+    function desvioPadrao (variancia) {
+        let desvioPradrao = variancia**1/2
+
+        return desvioPradrao
+    }
+    
+</script> -->
+
 </body>
 </html>
+

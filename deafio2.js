@@ -7,8 +7,7 @@
 // Desvio padrão 45.49263948061906
 // Números ímpares: 7,21,157,3
 
-class Calculadora {
-
+function fatorial(numero) {
+    
 }
 
-console.log(typeof Calculadora)

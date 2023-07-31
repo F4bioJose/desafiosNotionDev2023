@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+class Calculadora {
+
+    constructor(arrayNumerica) {
+    this.arrayNumerica = arrayNumerica;
+    }
+
+    fatorial() {
+    // Fatorial 
+    for (let i = 0; i < this.arrayNumerica.length; i++) {
+
+        this.arrayNumerica = this.arrayNumerica.slice(0,1)
+        this.arrayNumerica = Number(this.arrayNumerica)
+    }
+
+    if(this.arrayNumerica === 0 || this.arrayNumerica === 1) {
+        return 1
+
+    }else {
+        let fatorial = 1
+        for(let i = 1; i <= this.arrayNumerica; ++i) {
+        fatorial *= i;
+        }
+        console.log(fatorial)
+
+        return fatorial
+     }
+    } 
+
+    mediaAritmedica() {
+    // Média Aritmédica 
+        let soma = 0
+        for(let i = 0; i < this.arrayNumerica.length; i++) {
+            soma += this.arrayNumerica[i]
+        }
+        let media = soma/this.arrayNumerica.length
+        return media
+    } 
+   
+    
+
+    printAll() {
+       const media = this.mediaAritmedica();
+       console.log(`A média é ${media}`)
+       
+       const fatorial = this.fatorial();
+       console.log(`O fatorial do primeiro algarismo é ${fatorial}`)
+    }
+
+}
+    calc1 = new Calculadora ([1,2,1,4])
+    calc1.printAll();
+
+</script>
+</body>
+</html>
