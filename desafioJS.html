@@ -12,6 +12,7 @@ class Calculadora {
 
     constructor(arrayNumerica) {
     this.arrayNumerica = arrayNumerica;
+    
     }
 
     fatorial() {
@@ -30,7 +31,6 @@ class Calculadora {
         for(let i = 1; i <= this.arrayNumerica; ++i) {
         fatorial *= i;
         }
-        console.log(fatorial)
 
         return fatorial
      }
@@ -46,7 +46,33 @@ class Calculadora {
         return media
     } 
    
-    
+    variancia() {
+        let media = this.mediaAritmedica();
+        let desvioArray = [];
+
+        for(let i = 0; i < this.arrayNumerica.length; i++) {
+           let desvio = media - this.arrayNumerica[i]
+           if(desvio < 0) {
+                desvio = desvio*(-1)
+           }
+
+           let desvioAoQuadrado = desvio**(2)
+           desvioArray.push(desvioAoQuadrado)
+        }
+        let variancia = 0;
+        for (let i = 0; i < desvioArray.length; i++) {
+            variancia += desvioArray[i] / desvioArray.length 
+        }   
+        
+        return variancia
+    }
+
+    desvioPadrao () {
+        const variancia = this.variancia();
+        let desvioPradrao = variancia**(1/2)
+        
+        return desvioPradrao
+    }
 
     printAll() {
        const media = this.mediaAritmedica();
@@ -54,10 +80,16 @@ class Calculadora {
        
        const fatorial = this.fatorial();
        console.log(`O fatorial do primeiro algarismo é ${fatorial}`)
+
+       const variancia = this.variancia();
+       console.log(`${variancia}`)
+
+       const desvioPradrao = this.desvioPadrao();
+       console.log(`${desvioPradrao}`)
     }
 
 }
-    calc1 = new Calculadora ([1,2,1,4])
+    calc1 = new Calculadora ([5,3,1,9])
     calc1.printAll();
 
 </script>
